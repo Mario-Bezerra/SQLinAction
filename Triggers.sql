@@ -38,6 +38,22 @@ for each row
 	end$$
 DELIMITER ; */
 
+/* DELIMITER $$
+create trigger tr_atualiza_estoqueProduto AFTER update On itens_venda
+for each row
+begin
+	declare produtoID int;
+	declare lojaID int;
+	select p.id_Produtos into produtoID from produtos p where old.pedidoId = p.id_Produtos;
+	select pe.loja_id_Loja into lojaID from pedidos pe where pe.id_pedidos = old.pedidoId;
+	update produto_estoque set quantidade = quantidade + old.quantidade where 
+        loja_id = lojaID and produtoID = produtos_id;
+	update produto_estoque set quantidade = quantidade - new.quantidade where 
+        loja_id = lojaID and produtoID = produtos_id;
+end$$
+DELIMITER ; */
+
+
 /* INSERT INTO itens_venda
 (`produto_id`,
 `quantidade`,

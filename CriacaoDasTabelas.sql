@@ -66,6 +66,7 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
 /* drop table itens_venda;
 CREATE TABLE IF NOT EXISTS `itens_venda` (
   `produto_id` INT NOT NULL,
+  'numItem' INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `quantidade` INT NOT NULL,
   `subTotal` DOUBLE NOT NULL,
   `pedidoId` INT NOT NULL,
@@ -75,4 +76,5 @@ CREATE TABLE IF NOT EXISTS `itens_venda` (
   CONSTRAINT `fk_pedido_id`
     FOREIGN KEY (`pedidoId`)
     REFERENCES `pedidos` (`id_pedidos`)); */
+
 
