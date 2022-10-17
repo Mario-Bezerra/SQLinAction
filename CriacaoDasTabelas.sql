@@ -48,6 +48,7 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   `nomeCliente` VARCHAR(45) NOT NULL,
   `emailCliente` VARCHAR(45) NOT NULL,
   `telefoneCliente` VARCHAR(45) NOT NULL,
+  'nascimento' date,
   PRIMARY KEY (`idclientes`));
   
 CREATE TABLE IF NOT EXISTS `pedidos` (
@@ -76,5 +77,3 @@ CREATE TABLE IF NOT EXISTS `itens_venda` (
   CONSTRAINT `fk_pedido_id`
     FOREIGN KEY (`pedidoId`)
     REFERENCES `pedidos` (`id_pedidos`)); */
-
-

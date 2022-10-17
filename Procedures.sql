@@ -102,4 +102,60 @@ DELIMITER ;
 
 call deletarProduto(1) */
 
+ /* DELIMITER $$
+ create procedure deletarPedido(in pedidoId int)
+ begin
+		delete from pedidos where pedidos.id_pedidos = pedidoId;
+ end$$
+DELIMITER ; 
+call deletarPedido(1);
+*/
+
+/* DELIMITER $$
+ create procedure inserirPedido(in clienteId int, in lojaId int)
+ begin
+		insert into pedidos(cliente_id, loja_id_Loja) values (clienteId, lojaId);
+ end$$
+DELIMITER ; 
+
+call inserirPedido(5, 8); */
+
+
+/* drop procedure alterarPedido
+DELIMITER $$
+ create procedure alterarPedido(in clienteNovo int, in lojaNova int, in idAlteração int)
+ begin
+		update pedidos set cliente_id = clienteNovo where pedidos.cliente_id = idAlteração;
+        update pedidos set loja_id_Loja = lojaNova where pedidos.cliente_id = idAlteração;
+ end$$
+DELIMITER ; */
+
+/*
+drop procedure adicionarNacimento
+DELIMITER $$
+ create procedure adicionarNacimento(in idCliente int, in dataNascimento date)
+ begin
+		update clientes set clientes.nascimento = dataNascimento where clientes.idclientes = idCliente;
+ end$$
+DELIMITER ; 
+call adicionarNacimento(1, '1999-03-05');
+call adicionarNacimento(2, '1989-04-12');
+call adicionarNacimento(3, '1979-05-31');
+call adicionarNacimento(4, '1969-06-15');
+call adicionarNacimento(5, '1988-07-12');
+call adicionarNacimento(6, '1969-08-14');
+call adicionarNacimento(7, '1993-09-06');
+*/
+
+
+/* 
+drop procedure calcularIdade
+DELIMITER $$
+ create procedure calcularIdade(in idCliente int, out msg int)
+ begin
+		SELECT TIMESTAMPDIFF (YEAR,c.nascimento ,CURDATE()) as Idade into msg from clientes c where c.idclientes = idCliente;
+ end$$
+DELIMITER ; */
+
+
 
