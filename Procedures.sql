@@ -157,5 +157,57 @@ DELIMITER $$
  end$$
 DELIMITER ; */
 
+/* DELIMITER $$
+ create procedure inserirLoja(in nomeCidade varchar(45))
+ begin
+		insert into loja(cidade) values (nomeCidade);
+ end$$
+DELIMITER ;
+
+DELIMITER $$
+ create procedure adicionarItemVenda(in produtoID int, in qtd int, in pedidoID int)
+ begin
+		insert into itens_loja(produto_id, quantidade, pedidoId) values (produtoID, qtd, pedidoID);
+ end$$
+DELIMITER ;
+
+DELIMITER $$
+ create procedure inserirCategoria(in nome varchar(45))
+ begin
+		insert into produto_categoria(nome_categoria) values (nome);
+ end$$
+DELIMITER ;
+
+DELIMITER $$
+ create procedure inserirMarca(in nome varchar(45))
+ begin
+		insert into produto_marca(nome_marca) values (nome);
+ end$$
+DELIMITER ;
+
+DELIMITER $$
+ create procedure removerMarca(in marcaID int)
+ begin
+		delete from produto_marca where id_Marca = marcaID;
+ end$$
+DELIMITER ;
+
+DELIMITER $$
+ create procedure removerCategoria(in categoriaID int)
+ begin
+		delete from produto_categoria where id_Categoria = categoriaID;
+ end$$
+DELIMITER ;
+
+DELIMITER $$
+ create procedure removerItemVenda(in itemNum int)
+ begin
+		delete from itens_venda where numItem = itemNum;
+ end$$
+DELIMITER ; */
+
+
+
+
 
 
