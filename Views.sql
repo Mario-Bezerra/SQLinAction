@@ -43,3 +43,14 @@ where c.idclientes = p.cliente_id and p.id_pedidos = iv.pedidoId and iv.produto_
 order by iv.subTotal;
 select * from ClientesPedidoItensProdutoMarca */
 
+/* drop view itensPedido;
+create view itensPedido as
+select iv.produto_id as ProdutoID, p.id_pedidos as PedidoId, p.loja_id_Loja as LojaID from itens_venda iv 
+left join pedidos p on iv.pedidoId = p.id_pedidos; 
+select * from itensPedido */
+
+/* create view produtoMarcasECategorias as
+select p.nomeProduto , pm.nome_marca from produtos p
+right join produto_marca pm on pm.id_Marca = p.produto_id_Marca;
+select * from produtoMarcasECategorias */
+

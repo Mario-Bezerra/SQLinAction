@@ -93,18 +93,6 @@ VALUES (1 , 1),
 (10 , 10); */
 #select * from pedidos
 
-#drop trigger calculaSubTotal;
-#alter table itens_venda modify subTotal double;
-
-/* DELIMITER //
-create trigger calculaSubTotal BEFORE INSERT On itens_venda
-for each row 
-	begin
-	set NEW.subTotal = NEW.quantidade * (select p.preco from produtos p where
-    p.id_Produtos = New.produto_id);
-    end//  */
-    
-
  /* INSERT INTO `classest-system`.`itens_venda`
 (`produto_id`,
 `quantidade`,

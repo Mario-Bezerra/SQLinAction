@@ -61,19 +61,18 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
   CONSTRAINT `fk_pedidos_loja`
     FOREIGN KEY (`loja_id_Loja`)
     REFERENCES `loja` (`id_Loja`)
-);
+); */
 
+/* drop table itens_venda;
 CREATE TABLE IF NOT EXISTS `itens_venda` (
   `produto_id` INT NOT NULL,
   `quantidade` INT NOT NULL,
   `subTotal` DOUBLE NOT NULL,
   `pedidoId` INT NOT NULL,
-  PRIMARY KEY (`pedidoId`),
   CONSTRAINT `fk_produto_id_itens_venda`
     FOREIGN KEY (`produto_id`)
     REFERENCES `produtos` (`id_Produtos`),
   CONSTRAINT `fk_pedido_id`
     FOREIGN KEY (`pedidoId`)
     REFERENCES `pedidos` (`id_pedidos`)); */
-    
-#alter table pedidos add column precoTotal double;
+
